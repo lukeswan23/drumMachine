@@ -1,0 +1,58 @@
+// Bootstrap Sass Imports
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+$fontColour: #2bff4b;
+$offColour: #74967c;
+
+body {
+  font-family: "Baloo Chettan", cursive !important;
+  font-size: 2rem;
+}
+
+.container {
+  max-width: 800px;
+}
+
+.drum-pad {
+  margin: 1px;
+  width: 5rem;
+  height: 5rem;
+}
+
+.btn-danger {
+  color: $fontColour;
+
+  &:focus,
+  &:hover,
+  &:not(:disabled):not(.disabled):active {
+    color: $fontColour;
+  }
+  &:disabled,
+  &.disabled {
+    color: $offColour;
+  }
+}
+
+#textDisplay {
+  background-color: $danger;
+  width: 250px;
+  height: 33px;
+}
+
+//keep white spaces so background div is not removed on power off
+#display {
+  white-space: pre;
+  color: $fontColour;
+}
+
+#options {
+  // margin-left: ;
+}
+
+.fontColourJS {
+  color: #2bff4b;
+}
+
+.offColourJS {
+  color: #74967c;
+}
