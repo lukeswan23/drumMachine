@@ -32,6 +32,7 @@
 const soundBank = [
   {
     soundId: "q",
+    //keyId: 81,
     urlOne: "https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3",
     nameOne: "Heater 1",
     urlTwo: "https://s3.amazonaws.com/freecodecamp/drums/Chord_1.mp3",
@@ -98,6 +99,7 @@ const soundBank = [
 let powerBoolean = 0;
 let bankBoolean = 0;
 let audio = $("#player");
+let id = "";
 
 //power toggle
 $("#power").click(function() {
@@ -141,6 +143,11 @@ $("#volume").change(function() {
   audio.prop("volume", volumeLevel); //set property volume to volumeLevel
 });
 
+function getId(id) {
+  console.log(id);
+  playSound(id);
+}
+
 function playSound(id) {
   document.getElementById(id).blur();
   if (powerBoolean === 0) {
@@ -168,7 +175,38 @@ function playSound(id) {
   }
 }
 
-$(document).ready(function() {});
+$(document).ready(function() {
+  $("body").keydown(function(e) {
+    console.log(e.which);
+    if (e.which === 81) {
+      playSound("q");
+    }
+    if (e.which === 87) {
+      playSound("w");
+    }
+    if (e.which === 69) {
+      playSound("e");
+    }
+    if (e.which === 65) {
+      playSound("a");
+    }
+    if (e.which === 83) {
+      playSound("s");
+    }
+    if (e.which === 68) {
+      playSound("d");
+    }
+    if (e.which === 90) {
+      playSound("z");
+    }
+    if (e.which === 88) {
+      playSound("x");
+    }
+    if (e.which === 67) {
+      playSound("c");
+    }
+  });
+});
 
 //create listener function
 //depending on id play sound
