@@ -26,7 +26,7 @@
       <!-- <section id="drumMachine" class="row"> -->
       <div class="row justify-content-center align-items-center" id="whole">
         <div class="col">
-          <h1 class="text-center">Finger Pad</h1>
+          <h1 class="display-3 text-center" id="title">Finger Pad</h1>
           <div class="card">
             <div class="card-body">
               <!-- Row for vertical split of buttons to options -->
@@ -96,7 +96,6 @@
                         class="btn-danger drum-pad"
                         id="x"
                         onclick="getId(id)"
-                        onkeydown="getId(id)"
                       >
                         X
                       </button>
@@ -104,7 +103,6 @@
                         class="btn-danger drum-pad"
                         id="c"
                         onclick="getId(id)"
-                        onkeydown="getId(id)"
                       >
                         C
                       </button>
@@ -114,7 +112,7 @@
                 <!--OPTIONS-->
                 <!-- <div class="row justify-content-center"> -->
                 <div class="col align-self-center" id="options">
-                  <div class="row my-2">
+                  <div class="row mb-2">
                     <div class="col d-flex justify-content-center">
                       <button class="btn-danger mb-2" id="power">
                         Power
@@ -149,15 +147,11 @@
                   </div>
                 </div>
               </div>
-              <!--added in playing around-->
             </div>
           </div>
         </div>
       </div>
-      <!-- </section> -->
     </div>
-    <!-- </div> -->
-    <!-- </div> -->
 
     <audio src="" autoplay id="player" volume></audio>
 
@@ -165,10 +159,7 @@
     <script src="/js/popper.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
     <script src="/js/scripts.js"></script>
-    <script>
-      //get current year for copyright
-      $("#year").text(new Date().getFullYear());
-    </script>
+    <script></script>
   </body>
 </html>
 

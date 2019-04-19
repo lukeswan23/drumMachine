@@ -7026,8 +7026,10 @@ body {
 
 body {
   font-family: "Baloo Chettan", cursive !important;
-  font-size: 3rem;
-  background-color: #87b39178; }
+  background-color: #227284d4; }
+
+h1 {
+  color: #2bff4b; }
 
 .container,
 .row.justify-content-center.align-items-center {
@@ -7037,13 +7039,13 @@ body {
 
 .card {
   background-color: #000000;
-  background-image: url("https://www.transparenttextures.com/patterns/light-mesh.png");
-  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */ }
+  background-image: url("https://www.transparenttextures.com/patterns/light-mesh.png"); }
 
-.card .drum-pad {
+.drum-pad {
   margin: 1px;
-  width: 5rem;
-  height: 5rem; }
+  width: 6rem;
+  height: 6rem;
+  font-size: 3rem; }
 
 .btn-danger {
   color: #2bff4b; }
@@ -7051,6 +7053,9 @@ body {
     color: #2bff4b; }
   .btn-danger:disabled, .btn-danger.disabled {
     color: #74967c; }
+
+#options {
+  font-size: 2.5rem; }
 
 #textDisplay {
   background-color: #dc3545;
@@ -7067,5 +7072,22 @@ body {
 .offColourJS {
   color: #74967c; }
 
-input {
-  color: green; }
+input[type="range"] {
+  height: 26px;
+  -webkit-appearance: none;
+  margin: 10px 0;
+  width: 50%;
+  background-color: #dc3545; }
+
+input[type="range"]:focus {
+  outline: none; }
+
+input[type="range"]::-webkit-slider-thumb {
+  box-shadow: 1px 1px 1px #000000;
+  border: 1px solid #000000;
+  height: 30px;
+  width: 15px;
+  border-radius: 5px;
+  background: #2bff4b;
+  cursor: pointer;
+  -webkit-appearance: none; }

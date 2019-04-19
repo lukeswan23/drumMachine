@@ -98,7 +98,7 @@ const soundBank = [
 
 let powerBoolean = 0;
 let bankBoolean = 0;
-let audio = $("#player");
+//let audio = $("#player");
 let id = "";
 
 //power toggle
@@ -112,12 +112,14 @@ $("#power").click(function() {
     console.log("powered off");
     $(".drum-pad").prop("disabled", true);
     $("#power").toggleClass("offColourJS");
+    $("#title").css("color", "#74967c");
   } else {
     powerBoolean = 0;
     $("#bank").prop("disabled", false);
     $("#volume").prop("disabled", false);
     $(".drum-pad").prop("disabled", false);
     $("#power").toggleClass("offColourJS");
+    $("#title").css("color", "#2bff4b");
 
     console.log("powered on");
   }
@@ -140,41 +142,51 @@ $("#bank").click(function() {
 $("#volume").change(function() {
   console.log($("#volume").val());
   let volumeLevel = $("#volume").val();
-  audio.prop("volume", volumeLevel); //set property volume to volumeLevel
 });
 
-function getId(id) {
-  console.log(id);
-  playSound(id);
+//function to allow passing of current slider value to playSound
+function getVolume() {
+  let volumeLevel = $("#volume").val();
+  return volumeLevel;
 }
 
 function playSound(id) {
   document.getElementById(id).blur();
   if (powerBoolean === 0) {
     //check if power is on or not, if not function does not execute
-    console.log("pb " + powerBoolean);
-    console.log("bb " + bankBoolean);
     console.log(id + " pressed");
     let display = $("#display");
+    let audio = document.createElement("audio");
+    audio.volume = getVolume();
 
     for (let i = 0; i < soundBank.length; i++) {
       if (bankBoolean === 0) {
         if (soundBank[i].soundId == id) {
-          audio.attr("src", soundBank[i].urlOne);
           display.html(soundBank[i].nameOne);
+          audio.setAttribute("src", soundBank[i].urlOne);
+          audio.load();
+          audio.play();
         }
       }
       if (bankBoolean === 1) {
         if (soundBank[i].soundId == id) {
           console.log("sound2");
-          audio.attr("src", soundBank[i].urlTwo);
           display.html(soundBank[i].nameTwo);
+          audio.setAttribute("src", soundBank[i].urlTwo);
+          audio.load();
+          audio.play();
         }
       }
     }
   }
 }
 
+//on click play
+function getId(id) {
+  playSound(id);
+}
+
+//keystroke play
 $(document).ready(function() {
   $("body").keydown(function(e) {
     console.log(e.which);
